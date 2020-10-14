@@ -27,6 +27,10 @@
 .App-link {
   color: #61dafb;
 }
+.modal-page {
+  background-color: #eeeeee;
+  padding: 40px;
+}
 
 @keyframes App-logo-spin {
   from {
