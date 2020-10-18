@@ -8,11 +8,12 @@ function App() {
   // }
   var [modalState, setModalStateData] = useState(false);
   var [modalShowState, setModalShowState] = useState();
-  var [councilData, setCouncilData] = useState([
+  let councilData = [
     {
       type: "불면증",
       name: "누워도 잠이 안올 때",
       description: `사람들은 불안하면 잠을 잘 자지 못합니다.
+
       그리고 잠을 잘 자지 못하면 특별한 이유가 없어도 불안감을 더 느끼게 됩니다.
       이것은 신체적인 긴장 시스템의 작동으로 인해 스트레스에 대응하기 위한 신체의 기본적인 방어 수단입니다.
       하지만, 종종 이러한 방어 수단이 너무 강력해지거나 잘 통제되지 않으면 문제가 생기기 시작합니다.
@@ -40,7 +41,7 @@ function App() {
       전기밥솥으로 밥을 짓고 세탁기에 빨래를 넣으면, 신경을 써야 할 일이 하나로 줄어들게 되어 한 가지 일에 좀 더 집중할 수 있습니다.
       공부도 마찬가지입니다. 최대한 생각할 것들을 없애야 합니다.`,
     },
-  ]);
+  ];
 
   return (
     <div className="council-wrap">
@@ -52,18 +53,11 @@ function App() {
               onClick={() => {
                 setModalShowState(councilData[i].description);
                 setModalStateData(!modalState);
-
-                // if (modalState == true) {
-                //   setModalStateData(false);
-                // } else {
-                //   setModalStateData(true);
-                // }
               }}
             >
               button
             </button>
             <p>{council.name}</p>
-            {/* <div>{divs}</div> */}
           </div>
         );
       })}
@@ -77,16 +71,9 @@ function App() {
 }
 
 function Modal(props) {
-  // function showModal() {
-  //   if () {
-  //   props.councilData[0].description
-  //   }
-  // }
   return (
     <div className="modal-page">
       <p>{props.modalShowState}</p>
-      {/* <p>{props.councilData[1].description}</p>
-      <p>{props.councilData[2].description}</p> */}
     </div>
   );
 }
